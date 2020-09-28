@@ -18,13 +18,13 @@ The standard mode is the default and it can be run by executing the main.go file
 In this mode, the first generation of cells are randomly created. A less densely populated board can be created by modifying the density via a command line flag (lower number is more dense, default value is 10).
 
 ```
-go run main.go
+go run src/main.go
 ```
 
 ![one](./gifs/gol_one.gif)
 
 ```
-go run main.go --density 25
+go run src/main.go --density 25
 ```
 
 ![one](./gifs/gol_two.gif)
@@ -34,7 +34,7 @@ go run main.go --density 25
 In the interactive mode, the user can draw the starting state of the cells using their mouse by **left-clicking**. Once the desired pattern of cells has been drawn a **right-click** will trigger the simulation. Pressing the **middle-mouse-button** will stop the currently running simulation, clear the board of all cells and return the user to a state where they can draw a fresh starting state.
 
 ```
-go run main.go --interactive
+go run src/main.go --interactive
 ```
 
 ![one](./gifs/gol_three.gif)
