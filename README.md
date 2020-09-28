@@ -15,7 +15,7 @@ This program has two modes a standard mode and an interactive mode
 ## Standard mode
 
 The standard mode is the default and it can be run by executing the main.go file:
-In this mode, the first generation of cells are randomly created. A less densely populated board can be created by modifying the density via a command line flag (lower number is more dense, default value is 15).
+In this mode, the first generation of cells are randomly created. A less densely populated board can be created by modifying the density via a command line flag (lower number is more dense, default value is 10).
 
 ```
 go run main.go
