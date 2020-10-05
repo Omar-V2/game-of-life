@@ -13,8 +13,8 @@ import (
 // Game is the general game config
 type Game struct {
 	cells       [][]bool
-	Width       int
-	Height      int
+	width       int
+	height      int
 	density     int
 	interactive bool
 	begin       bool
@@ -27,10 +27,12 @@ func NewGame(width, height, density int, interactive, begin bool) *Game {
 		cells[i] = make([]bool, width)
 	}
 	return &Game{
-		cells:   cells,
-		Width:   width,
-		Height:  height,
-		density: density,
+		cells:       cells,
+		width:       width,
+		height:      height,
+		density:     density,
+		interactive: interactive,
+		begin:       begin,
 	}
 }
 
@@ -59,7 +61,7 @@ func (g *Game) ClearLife() {
 // transitions the game to the next state using the game's rules:
 // https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 func (g *Game) nextState() {
-	nextCells := NewGame(g.Width, g.Height, g.density, g.interactive, g.begin).cells
+	nextCells := NewGame(g.width, g.height, g.density, g.interactive, g.begin).cells
 	for y := range g.cells {
 		for x := range g.cells[y] {
 			count := g.countNeighbours(x, y)
@@ -101,8 +103,8 @@ func (g *Game) countNeighbours(x, y int) int {
 
 // checks if a given co-ordinate is in the bounds of the board's dimensions
 func (g *Game) inBounds(x, y int) bool {
-	xOk := x >= 0 && x < g.Width
-	yOk := y >= 0 && y < g.Height
+	xOk := x >= 0 && x < g.width
+	yOk := y >= 0 && y < g.height
 	return xOk && yOk
 }
 
